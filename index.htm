@@ -17,7 +17,7 @@
     <!-- <link href="c/main.css" rel="stylesheet" type="text/css" /> -->
     
     <style>
-    	body { background-color:#ccc; }
+    	body { background-color:#ccc; height:100% }
     	.button {
             width:180px;
             height:60px;
@@ -51,6 +51,24 @@
         .done .default { display:none; }
         .done .progress { display:none; }
         .done .finished { display:inline; }
+        
+        .menuContainer {
+            width:300vw;
+            overflow:hidden;
+            background-color:rgba(0,0,0,0.3);
+            position: fixed;
+            top:0;
+            right:0;
+        }
+        
+        .rightMenu {
+            width:90vw;
+            height:100vh;
+            background-color:#666;
+            position: absolute;
+            top:0;
+            right:0;
+        }
     	
     </style>
     <script>
@@ -78,5 +96,8 @@
         <div class="button"><span class="default">Save</span><span class="progress">Saving</span><span class="finished">Saved</span></div>
     </div>
 
+    <div class="menuContainer"> 
+        <div class="rightMenu"></div>
+    </div>
 </body>
 </html>
