@@ -1,87 +1,27 @@
-<!doctype html>
-<html>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    
-    <!-- <script src="masonry.pkgd.min.js"></script> -->
-    <!-- <script src="http://packery.metafizzy.co/packery.pkgd.min.js"></script> -->
-    <!-- <script src="s/main.js"></script> -->
-    <!--script src="//ajax.googleapis.com/ajax/libs/webfont/1.5.3/webfont.js"></script-->
-    
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css'>
-    <!-- <link href="c/main.css" rel="stylesheet" type="text/css" /> -->
-    
-    <style>
-    	body { background-color:#ccc; height:100% }
-    	.button {
-            width:180px;
-            height:60px;
-            line-height:60px;
-            text-align:center;
-           
-            /*background: linear-gradient(to right,  #30c7ff 0%,#30c7ff 0%,#00aeef 0%,#00aeef 100%); /* W3C */
-            background: linear-gradient(to right,  #30c7ff 0%,#30c7ff 50%,#00aeef 50%,#00aeef 100%);
-            background-size: 200% 200%;
-            background-position: 100% 50%;
-        }
-        
-        .inprog {
-            background-position: 5% 50%;
-            transition:all linear 5s;
-        }
-        
-        .done {
-            background-position: 0% 50%;
-            transition:all linear 0.2s;
-        }
-        
-        .default { display:inline; }
-        .progress { display:none; }
-        .finished { display:none; }
-        
-        .inprog .default { display:none; }
-        .inprog .progress { display:inline; }
-        .inprog .finished { display:none; }
-        
-        .done .default { display:none; }
-        .done .progress { display:none; }
+@@ -53,14 +53,20 @@
         .done .finished { display:inline; }
         
         .menuContainer {
             width:300vw;
+            width:100vw;
             height:100vh;
-            overflow:auto;
+            overflow:hidden;
             background-color:rgba(0,0,0,0.3);
             position: fixed;
             top:0;
             right:0;
         }
         
+        .menuContents {
+            width:300vw;
+            height:100vh;
+            background-color:rgba(0,0,0,0.3);
+        }
+        
         .rightMenu {
             width:90vw;
             height:100vh;
-            background-color:#666;
-            position: absolute;
-            top:0;
-            right:0;
-        }
-    	
-    </style>
-    <script>
-		$(document).ready(function() {
-            $(".button").click(function(){
-                var $this = $(this);
-                $this.addClass("inprog");
-                function getRandomArbitrary(min, max) {
-                  return Math.random() * (max - min) + min;
-                }
-                var rng = getRandomArbitrary(0, 5) * 1000;
-                console.log(rng);
+@@ -84,7 +90,6 @@
                 setTimeout(function(){
                     $this.removeClass("inprog");
                     $this.addClass("done");
@@ -89,16 +29,16 @@
                 }, rng);
             });
         });
-	</script>
-</head>
-<body>
-
-    <div style="padding:10vh;">
+@@ -96,8 +101,10 @@
         <div class="button"><span class="default">Save</span><span class="progress">Saving</span><span class="finished">Saved</span></div>
     </div>
 
     <div class="menuContainer"> 
         <div class="rightMenu"></div>
+    <div class="menuContainer">
+        <div class="menuContents">
+            <div class="rightMenu"></div>
+        </div>
     </div>
 </body>
 </html>
